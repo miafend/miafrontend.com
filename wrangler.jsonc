@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "react-router-app",
+  "compatibility_date": "2025-04-04",
+  "main": "./workers/app.ts",
+  "vars": {
+    "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vault",
+      "database_id": "d1d20d11-1d8f-4ef8-9d87-4596505bb7b3",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}

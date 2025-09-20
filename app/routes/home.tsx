@@ -14,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+    <main className="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative flex flex-col justify-between h-svh items-center py-8 sm:py-12 lg:py-16">
         <header className="flex w-full justify-between">
@@ -24,29 +24,29 @@ export default function Home() {
           <Navbar />
         </header>
 
-        <div className="self-start flex flex-col gap-8 text-lg text-zinc-500 max-w-sm tracking-tight">
+        <div className="self-start flex flex-col gap-8 text-lg text-secondary max-w-sm tracking-tight">
           <div>
             <p>
               i make websites from{' '}
-              <span className="text-zinc-900">**design**</span> to{' '}
-              <span className="text-zinc-900">&lt;code&gt;</span>,
+              <span className=" text-foreground">**design**</span> to{' '}
+              <span className="text-foreground">&lt;code&gt;</span>,
             </p>
             <p>
               capable of delivering Apple-level{' '}
-              <span className="text-zinc-900">motion design</span>.
+              <span className="text-foreground">motion design</span>.
             </p>
           </div>
           <div>
             <p>currently available for freelance jobs.</p>
             <p>
               reach me out at{' '}
-              <span className="text-[#e67219]">@miafrontend@gmail.com</span>
+              <span className="text-primary">miafrontend@gmail.com</span>
             </p>
           </div>
         </div>
 
         <div className="w-full">
-          <div className="flex text-lg justify-between text-zinc-500 text-nowrap lowercase">
+          <div className="flex text-lg justify-between text-secondary text-nowrap lowercase">
             <p>ui/ux designer</p>
             <p>+</p>
             <p>frontend developer</p>

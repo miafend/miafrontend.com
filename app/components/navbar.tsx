@@ -10,7 +10,7 @@ export default function Navbar() {
         {socials.map((social) => (
           <li
             key={social.social}
-            className="before:content-['-'] before:mr-1 text-xl hover:underline text-zinc-500"
+            className="before:content-['-'] before:mr-1 text-xl hover:underline text-secondary"
           >
             <a href={social.link} target="_blank" rel="noopener noreferrer">
               {social.social}

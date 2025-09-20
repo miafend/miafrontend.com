@@ -1,56 +1,22 @@
-import * as schema from "~/database/schema";
-
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import type { Route } from './+types/home';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: 'Mia Chow - Design Engineer' },
+    {
+      name: 'description',
+      content:
+        'Frontend Developer & Design Engineer specializing in React, TypeScript, and modern development. From design to code.',
+    },
   ];
 }
 
-export async function action({ request, context }: Route.ActionArgs) {
-  const formData = await request.formData();
-  let name = formData.get("name");
-  let email = formData.get("email");
-  if (typeof name !== "string" || typeof email !== "string") {
-    return { guestBookError: "Name and email are required" };
-  }
-
-  name = name.trim();
-  email = email.trim();
-  if (!name || !email) {
-    return { guestBookError: "Name and email are required" };
-  }
-
-  try {
-    await context.db.insert(schema.guestBook).values({ name, email });
-  } catch (error) {
-    return { guestBookError: "Error adding to guest book" };
-  }
-}
-
-export async function loader({ context }: Route.LoaderArgs) {
-  const guestBook = await context.db.query.guestBook.findMany({
-    columns: {
-      id: true,
-      name: true,
-    },
-  });
-
-  return {
-    guestBook,
-    message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE,
-  };
-}
-
-export default function Home({ actionData, loaderData }: Route.ComponentProps) {
+export default function Home() {
   return (
-    <Welcome
-      guestBook={loaderData.guestBook}
-      guestBookError={actionData?.guestBookError}
-      message={loaderData.message}
-    />
+    <main className="flex items-center justify-center pt-16 pb-4 flex-col h-svh">
+      <h1 className="text-2xl mb-1">Mia Chow</h1>
+      <p className="font-bold text-5xl mb-4">Design Engineer</p>
+      <p className="text-zinc-500">i make websites from design to code.</p>
+    </main>
   );
 }

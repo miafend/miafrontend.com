@@ -1,3 +1,4 @@
+import { EMAIL } from '~/lib/constants';
 import type { Route } from './+types/home';
 import Navbar from '~/components/navbar';
 
@@ -37,10 +38,18 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <p>currently available for freelance jobs.</p>
+            <p>
+              currently <span className="text-foreground">available</span> for
+              freelance jobs.
+            </p>
             <p>
               reach me out at{' '}
-              <span className="text-primary">miafrontend@gmail.com</span>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="text-primary hover:underline"
+              >
+                {EMAIL}
+              </a>
             </p>
           </div>
         </div>

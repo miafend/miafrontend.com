@@ -14,9 +14,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="w-3xl mx-auto">
+    <main className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-between h-svh items-center py-16">
+      <section className="relative flex flex-col justify-between h-svh items-center py-8 sm:py-12 lg:py-16">
         <header className="flex w-full justify-between">
           <a className="text-2xl hover:underline" href="/">
             Mia Chow
@@ -46,12 +46,12 @@ export default function Home() {
         </div>
 
         <div className="w-full">
-          <div className="flex text-lg justify-between text-zinc-500 lowercase">
+          <div className="flex text-lg justify-between text-zinc-500 text-nowrap lowercase">
             <p>ui/ux designer</p>
             <p>+</p>
             <p>frontend developer</p>
           </div>
-          <div className="font-bold text-8xl flex justify-between">
+          <div className="font-bold text-[12vw] md:text-[10vw] lg:text-8xl flex justify-between space-x-3">
             <p>Design</p>
             <p>Engineer</p>
           </div>

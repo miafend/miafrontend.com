@@ -25,7 +25,14 @@ export default function Home() {
           <Navbar />
         </header>
 
-        <div className="flex flex-col gap-6 text-lg lg:text-xl text-secondary max-w-prose font-light">
+        <div className="flex flex-col space-y-6 text-lg lg:text-xl text-secondary max-w-prose font-light">
+          <div className="size-20">
+            <img
+              src="/avatar.png"
+              alt="Mia Chow"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
           <div>
             <p>
               i make websites from{' '}

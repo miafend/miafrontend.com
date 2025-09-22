@@ -82,3 +82,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .glass-overlay {
+    backdrop-filter: blur(4px);
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-background)
+    );
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-background)
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-background)
+    );
+    padding: 32px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+}

@@ -15,32 +15,32 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+    <main className="w-full max-w-7xl mx-auto px-6 lg:px-12 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-between h-svh items-center py-8 sm:py-12 lg:py-16">
+      <section className="relative flex flex-col h-svh items-start py-4 sm:py-6 lg:py-12 justify-between">
         <header className="flex w-full justify-between">
-          <a className="text-2xl hover:underline" href="/">
+          <a className="text-2xl" href="/">
             Mia Chow
           </a>
           <Navbar />
         </header>
 
-        <div className="self-start flex flex-col gap-8 text-lg text-secondary max-w-sm tracking-tight">
+        <div className="flex flex-col gap-6 text-lg lg:text-xl text-secondary max-w-prose font-light">
           <div>
             <p>
               i make websites from{' '}
               <span className=" text-foreground">**design**</span> to{' '}
-              <span className="text-foreground">&lt;code&gt;</span>,
+              <span className="text-foreground">&lt;code /&gt;</span>,
             </p>
             <p>
-              capable of delivering Apple-level{' '}
-              <span className="text-foreground">motion design</span>.
+              delivering Apple-level{' '}
+              <span className="text-foreground">web animation</span>{' '}
+              experiences.
             </p>
           </div>
           <div>
             <p>
-              currently <span className="text-foreground">available</span> for
-              freelance jobs.
+              currently <span className="text-foreground">open to work</span>,
             </p>
             <p>
               reach me out at{' '}
@@ -54,18 +54,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full">
-          <div className="flex text-lg justify-between text-secondary text-nowrap lowercase">
+        <div className="w-full flex flex-col -space-y-4">
+          <div className="flex text-lg lg:text-xl justify-between text-secondary text-nowrap lowercase font-light">
             <p>ui/ux designer</p>
             <p>+</p>
             <p>frontend developer</p>
           </div>
-          <div className="font-bold text-[12vw] md:text-[10vw] lg:text-8xl flex justify-between space-x-3">
-            <p>Design</p>
-            <p>Engineer</p>
+          <div className="font-bold text-[12vw] lg:text-[10vw] flex justify-between space-x-3">
+            <div className="mr-[2vw]">Design</div>
+            <div>Engineer</div>
           </div>
         </div>
       </section>
+
+      {/* Glass Overlay */}
+      <div aria-hidden="true" className="glass-overlay"></div>
     </main>
   );
 }

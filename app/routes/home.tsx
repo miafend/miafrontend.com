@@ -47,7 +47,8 @@ export default function Home() {
           </div>
           <div>
             <p>
-              currently <span className="text-foreground">open to work</span>,
+              currently <span className="text-foreground">available</span> for
+              freelance projects,
             </p>
             <p>
               reach me out at{' '}

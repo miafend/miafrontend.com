@@ -1,6 +1,13 @@
 import { EMAIL } from '~/lib/constants';
 import type { Route } from './+types/home';
-import Navbar from '~/components/navbar';
+import { useLocation } from 'react-router';
+import { cn } from '~/lib/utils';
+
+const links = [
+  { name: 'home', link: '/' },
+  { name: 'github', link: 'https://github.com/miafend' },
+  { name: 'x', link: 'https://x.com/miafrontend' },
+];
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,6 +18,39 @@ export function meta({}: Route.MetaArgs) {
         'Frontend Developer & Design Engineer specializing in React, TypeScript, and modern development. From design to code. Specialized in web animation',
     },
   ];
+}
+
+export function Navbar() {
+  const location = useLocation();
+
+  return (
+    <nav>
+      <ul>
+        {links.map((link) => {
+          const isActive = location.pathname === link.link;
+          const isExternal = link.link.startsWith('http');
+
+          return (
+            <li
+              key={link.name}
+              className={cn(
+                "before:content-['-'] before:mr-1 lg:text-lg font-light hover:underline",
+                isActive ? 'text-foreground' : 'text-secondary'
+              )}
+            >
+              <a
+                href={link.link}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+              >
+                {link.name}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 }
 
 export default function Home() {
@@ -25,7 +65,7 @@ export default function Home() {
           <Navbar />
         </header>
 
-        <div className="flex flex-col space-y-6 text-lg lg:text-xl text-secondary max-w-prose font-light">
+        <div className="flex flex-col space-y-6 lg:text-lg text-secondary max-w-prose font-light">
           <div className="size-20">
             <img
               src="/avatar.png"
@@ -62,13 +102,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full flex flex-col -space-y-4">
-          <div className="flex text-lg lg:text-xl justify-between text-secondary text-nowrap lowercase font-light">
+        <div className="w-full flex flex-col">
+          <div className="flex lg:text-lg justify-between text-secondary text-nowrap lowercase font-light">
             <p>ui/ux designer</p>
             <p>+</p>
             <p>frontend developer</p>
           </div>
-          <div className="font-bold text-[12vw] lg:text-[10vw] flex justify-between space-x-3">
+          <div className="font-bold text-[12vw] lg:text-[10vw] leading-none flex justify-between space-x-3">
             <div className="mr-[2vw]">Design</div>
             <div>Engineer</div>
           </div>

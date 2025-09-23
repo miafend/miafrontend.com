@@ -34,8 +34,8 @@ export function Navbar() {
             <li
               key={link.name}
               className={cn(
-                "before:content-['-'] before:mr-1 lg:text-lg font-light hover:underline",
-                isActive ? 'text-foreground' : 'text-secondary'
+                "font-light before:mr-1 before:content-['-'] hover:underline lg:text-lg",
+                isActive ? 'text-foreground' : 'text-secondary',
               )}
             >
               <a
@@ -55,9 +55,9 @@ export function Navbar() {
 
 export default function Home() {
   return (
-    <main className="w-full max-w-7xl mx-auto px-6 lg:px-12 overflow-x-hidden">
+    <main className="mx-auto w-full max-w-7xl overflow-x-hidden px-6 lg:px-12">
       {/* Hero Section */}
-      <section className="relative flex flex-col h-svh items-start py-4 sm:py-6 lg:py-12 justify-between">
+      <section className="relative flex h-svh flex-col items-start justify-between py-4 sm:py-6 lg:py-12">
         <header className="flex w-full justify-between">
           <a className="text-2xl" href="/">
             Mia Chow
@@ -65,18 +65,18 @@ export default function Home() {
           <Navbar />
         </header>
 
-        <div className="flex flex-col space-y-6 lg:text-lg text-secondary max-w-prose font-light">
+        <div className="text-secondary flex max-w-prose flex-col space-y-6 font-light lg:text-lg">
           <div className="size-20">
             <img
               src="/avatar.png"
               alt="Mia Chow"
-              className="w-full h-full object-cover rounded-full"
+              className="h-full w-full rounded-full object-cover"
             />
           </div>
           <div>
             <p>
               i make websites from{' '}
-              <span className=" text-foreground">**design**</span> to{' '}
+              <span className="text-foreground">**design**</span> to{' '}
               <span className="text-foreground">&lt;code /&gt;</span>,
             </p>
             <p>
@@ -102,13 +102,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full flex flex-col">
-          <div className="flex lg:text-lg justify-between text-secondary text-nowrap lowercase font-light">
+        <div className="flex w-full flex-col">
+          <div className="text-secondary flex justify-between font-light text-nowrap lowercase lg:text-lg">
             <p>ui/ux designer</p>
             <p>+</p>
             <p>frontend developer</p>
           </div>
-          <div className="font-bold text-[12vw] lg:text-[10vw] leading-none flex justify-between space-x-3">
+          <div className="flex justify-between space-x-3 text-[12vw] leading-none font-bold lg:text-[8rem]">
             <div className="mr-[2vw]">Design</div>
             <div>Engineer</div>
           </div>
